@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-$WD =  "C:/Users/tyler/PycharmProjects/untitled/"
-rm /test_results/*
+WD=$(pwd)
+rm $WD/test_results/*
 touch $WD/test_results/8bits100trials.txt
 touch $WD/test_results/10bits100trials.txt
 touch $WD/test_results/16bits100trials.txt
