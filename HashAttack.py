@@ -57,8 +57,8 @@ class HashAttack():
         while True:
             counter += 1
             if answer == self.compute_sha1(str(lorem + counter), bits_wanted):
-                print("Got it! Pre-image attack complete with answer %d in %d steps" % (answer, loops))
-                print("The original message was %d compared to %d" % (lorem, lorem + counter))
+                #print("Got it! Pre-image attack complete with answer %d in %d steps" % (answer, loops))
+                #print("The original message was %d compared to %d" % (lorem, lorem + counter))
                 return loops + 1
             loops += 1
 
