@@ -37,7 +37,6 @@ class HashAttack:
         # return only the bits asked for
         return self.byte_arr_to_int(bt_arr, i + 1)
 
-    # TODO average this all out for final output
     def run_trials(self, method):
         print("Testing %s with %d bits wanted and %d trials:\n" % (method.__name__, self.bits_wanted, self.trials))
         total_loops = 0
@@ -64,7 +63,7 @@ class HashAttack:
             if answer == self.compute_sha1(str(lorem + counter), self.bits_wanted):
                 #print("Got it! Pre-image attack complete with answer %d in %d steps" % (answer, loops))
                 #print("The original message was %d compared to %d" % (lorem, lorem + counter))
-                return loops + 1
+                return loops
             loops += 1
 
     def collision_attack(self):
@@ -76,7 +75,7 @@ class HashAttack:
             if answer in dct.keys():
                 #print("Got it! Collision attack complete with answer %d in %d steps" % (answer, loops))
                 #print("The original message was %d compared to %d" % (dct[answer], lorem + counter))
-                return loops + 1
+                return loops
             dct[answer] = lorem
             counter += 1
             loops += 1
